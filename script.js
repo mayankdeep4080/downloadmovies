@@ -10,7 +10,7 @@
         displayNewMovies();
         return;
       }
-      const response = await fetch(`http://www.omdbapi.com/?apikey=34c918be&s=${searchQuery}`);
+      const response = await fetch(`https://www.omdbapi.com/?apikey=34c918be&s=${searchQuery}`);
       const data = await response.json();
 
       // Check for API response error
@@ -35,7 +35,7 @@
         `;
         movieCard.addEventListener("click", async () => {
           // Fetch detailed movie data from OMDB API
-          const detailResponse = await fetch(`http://www.omdbapi.com/?apikey=34c918be&i=${movie.imdbID}`);
+          const detailResponse = await fetch(`https://www.omdbapi.com/?apikey=34c918be&i=${movie.imdbID}`);
 	  const detailData = await detailResponse.json();
 	        // Check for API response error
       if (detailData.Error) {
@@ -67,7 +67,7 @@
 // Function to display new movies
 async function displayNewMovies() {
   // Fetch new movie data from OMDB API
-  const response = await fetch("http://www.omdbapi.com/?apikey=34c918be&s=marvel");
+  const response = await fetch("https://www.omdbapi.com/?apikey=34c918be&s=marvel");
   const data = await response.json();
 
   // Check for API response error
